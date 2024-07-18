@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #eee;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.cards {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.cards .card {
+    position: relative;
+    display: flex;
+    width: 300px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px solid cornflowerblue;
+    margin: 15px;
+}
+
+.cards .card::before {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: 0px;
+  transition: height .5s ease;
+}
+
+.cards .card:hover::before {
+  content: "Show Details";
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  height: inherit;
+  background-color: rgba(0,0,0, .8);
+}
+
+/* .cards .card:hover {
+    background-color: burlywood;
+    font-weight: 700;
+    border: 4px solid #fff;
+} */
+
+
+/* @keyframes leftSide {
+    from {
+      left: 0px
+    }
+
+    to {
+      left: -300px
+    }  
+}
+
+
+@keyframes rightSide {
+  from {
+    left: -300px
+  }
+
+  to {
+    left: 0px
+  }  
+} */
+
+#book-side {
+  position: fixed;
+  display: block;
+  width: 500px;
+  right: -500px;
+  top: 0px;
+  transition: all .5s ease;
+  background-color: rgba(0,0,0, .8);
+  color: #fff;
+  height: 100%;
+  padding: 10px;
+  overflow: auto;
+}
+
+
+#cover {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255, .6);
+  z-index: 2;
+  display: none
+
+}
+#new-book {
+  position: fixed;
+  display: block;
+  width: 500px;
+
+  top: -500px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all .6s ease-in-out;
+  background-color: rgba(0,0,0, .8);
+  
+  color: #fff;
+  height: 500px;
+  padding: 10px;
+  overflow: auto;
+  z-index: 2;
+}
+
+.info {
+  
+}
